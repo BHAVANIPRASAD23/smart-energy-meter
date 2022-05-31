@@ -7,9 +7,7 @@ String API = "";   // Write API KEY
 String HOST = "api.thingspeak.com";
 String PORT = "80";
 String field1 = "field1";
-String field2 = "field2";
 int countTrueCommand;
-int countTimeCommand; 
 boolean found = false; 
 int valSensor = 1;
 SoftwareSerial esp8266(RX,TX); 
@@ -44,11 +42,6 @@ float AcsValue=0.0,Samples=0.0,AvgAcs=0.0,AcsValueF=0.0;
 }
 AvgAcs=Samples/150.0;//Taking Average of Samples
 
-//((AvgAcs * (5.0 / 1024.0)) is converitng the read voltage in 0-5 volts
-//2.5 is offset(I assumed that arduino is working on 5v so the viout at no current comes
-//out to be 2.5 which is out offset. If your arduino is working on different voltage than 
-//you must change the offset according to the input voltage)
-//0.185v(185mV) is rise in output voltage when 1A current flows at input
 AcsValueF = (2.5 - (AvgAcs * (5.0 / 1024.0)) )/0.185;
 
 return (AcsValueF);//Print the read current on Serial monitor
