@@ -8,7 +8,7 @@ String HOST = "api.thingspeak.com";
 String PORT = "80";
 String field1 = "field1";
 int countTrueCommand;
-int countTimeCommand
+int countTimeCommand;
 boolean found = false; 
 int valSensor = 1;
 SoftwareSerial esp8266(RX,TX); 
